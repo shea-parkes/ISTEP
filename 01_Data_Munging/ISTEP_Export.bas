@@ -40,7 +40,11 @@ For year = 2007 To 2013
                 Print #1, "|"; CStr(grade);
                 Print #1, "|"; "ELA";
                 Print #1, "|"; Trim(Sheets(CStr(year)).Cells(i_row, col_grade_start).Value);
-                Print #1, "|"; Trim(Sheets(CStr(year)).Cells(i_row, col_grade_start + 1).Value)
+                If Sheets(CStr(year)).Cells(i_row, col_grade_start + 1).Value = "100.00%" Then
+                    Print #1, "|1"
+                Else
+                    Print #1, "|"; Trim(Sheets(CStr(year)).Cells(i_row, col_grade_start + 1).Value)
+                End If
             End If
             
             If (Not IsEmpty(Sheets(CStr(year)).Cells(i_row, col_grade_start + 2))) _
@@ -51,7 +55,11 @@ For year = 2007 To 2013
                 Print #1, "|"; CStr(grade);
                 Print #1, "|"; "Math";
                 Print #1, "|"; Trim(Sheets(CStr(year)).Cells(i_row, col_grade_start + 2).Value);
-                Print #1, "|"; Trim(Sheets(CStr(year)).Cells(i_row, col_grade_start + 3).Value)
+                If Sheets(CStr(year)).Cells(i_row, col_grade_start + 3).Value = "100.00%" Then
+                    Print #1, "|1"
+                Else
+                    Print #1, "|"; Trim(Sheets(CStr(year)).Cells(i_row, col_grade_start + 3).Value)
+                End If
             End If
             
         Next grade
