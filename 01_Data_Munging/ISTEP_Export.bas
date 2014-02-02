@@ -1,3 +1,5 @@
+
+
 Sub WriteOutFlat()
 'OBJECTIVE: Flatten the source data into a fully long format for import into analytic software
 '
@@ -37,8 +39,8 @@ For year = 2007 To 2013
                 Print #1, "|"; CStr(year);
                 Print #1, "|"; CStr(grade);
                 Print #1, "|"; "ELA";
-                Print #1, "|"; Sheets(CStr(year)).Cells(i_row, col_grade_start).Value;
-                Print #1, "|"; Sheets(CStr(year)).Cells(i_row, col_grade_start + 1).Value
+                Print #1, "|"; Trim(Sheets(CStr(year)).Cells(i_row, col_grade_start).Value);
+                Print #1, "|"; Trim(Sheets(CStr(year)).Cells(i_row, col_grade_start + 1).Value)
             End If
             
             If (Not IsEmpty(Sheets(CStr(year)).Cells(i_row, col_grade_start + 2))) _
@@ -48,8 +50,8 @@ For year = 2007 To 2013
                 Print #1, "|"; CStr(year);
                 Print #1, "|"; CStr(grade);
                 Print #1, "|"; "Math";
-                Print #1, "|"; Sheets(CStr(year)).Cells(i_row, col_grade_start + 2).Value;
-                Print #1, "|"; Sheets(CStr(year)).Cells(i_row, col_grade_start + 3).Value
+                Print #1, "|"; Trim(Sheets(CStr(year)).Cells(i_row, col_grade_start + 2).Value);
+                Print #1, "|"; Trim(Sheets(CStr(year)).Cells(i_row, col_grade_start + 3).Value)
             End If
             
         Next grade
