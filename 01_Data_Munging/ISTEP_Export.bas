@@ -7,6 +7,7 @@ Sub WriteOutFlat()
 'DEVELOPER NOTES:
 '  * Data source: http://www.doe.in.gov/sites/default/files/accountability/2013-istep-school-results-grade.xlsx
 '  * Must strip worksheet names to just the year for this to work
+'  * 2013 Had the School IDs listed first (unlike every other year) so I just manually swapped them
 '  * This does not output the legacy scores for grades 9+ in the oldest years
 
 Dim OutFile As String
