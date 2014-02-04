@@ -100,7 +100,7 @@ WriteSparseFlat(df.grade,'Grade_Sparse.txt',c('district','school','year','grade'
 ## Do the stacking of the text files and data.frames
 shell(paste(paste0(dir.proj,'02_Analytics/02b_Stack_Aggregate_Sparse.bat'),dir.temp))
 df.aggs <- rbind.fill(df.source,df.district,df.school,df.year,df.grade)
-df.aggs$agg.level <- factor(
+df.aggs$agg_level <- factor(
   rep(
     c('subject','district','school','year','grade')
     ,times=c(nrow(df.source),nrow(df.district),nrow(df.school),nrow(df.year),nrow(df.grade))
